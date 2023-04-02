@@ -1,15 +1,17 @@
+let elements = document.getElementsByName('cssProperty');
+let div = document.getElementById('modify');
 function set()
 {
-    let elements = document.getElementsByName('cssProperty');
-
-    console.log( elements);
-
     for(let i = 0; i < elements.length; i++)
-    {
-        console.log(elements[i].value);
-    }
+    {   
+        let cssProperty = elements[i].getAttribute('id');
 
+        let cssValue = elements[i].value;
+        
+        div.style[ cssProperty] = cssValue;
+
+    }
+    
 }
 
-
-document.getElementById("set").addEventListener('click', set)
+document.getElementById("set").addEventListener('click', set);
